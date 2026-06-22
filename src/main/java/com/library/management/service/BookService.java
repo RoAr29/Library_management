@@ -10,5 +10,11 @@ public class BookService {
 
     @Autowired
     private BookRepository repository;
+    
+    public void addBook(Book book) {
+    	repository.addBook(book);
+    }
+    
+    
 
 }
