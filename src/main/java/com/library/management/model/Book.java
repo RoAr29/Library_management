@@ -1,7 +1,13 @@
 package com.library.management.model;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "books")
 public class Book {
 	
+	@Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String title;
 	private String author;
@@ -10,11 +16,10 @@ public class Book {
 	public Book() {
 	}
 	
-	public Book(int id, String title, String author, double price) {
-		this.id = id;
-		this.title = title;
-		this.author = author;
-		this.price = price;
+	public Book(String title, String author, double price) {
+	    this.title = title;
+	    this.author = author;
+	    this.price = price;
 	}
 
 	public int getId() {
