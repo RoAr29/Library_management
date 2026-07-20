@@ -1,6 +1,8 @@
 package com.library.management.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Positive;
 
 @Entity
 @Table(name = "books")
@@ -9,8 +11,14 @@ public class Book {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
+	
+	@NotBlank(message = "Title cannot be empty")
 	private String title;
+
+	@NotBlank(message = "Author cannot be empty")
 	private String author;
+
+	@Positive(message = "Price must be greater than zero")
 	private double price;
 	
 	public Book() {
