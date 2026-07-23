@@ -36,8 +36,4 @@ public class ApiError {
         return message;
     }
     
-    public int err(int n) {
-    	return n*n;
-    }
-    
 }
